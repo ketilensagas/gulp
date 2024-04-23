@@ -18,11 +18,10 @@ a {
 }
 
 .main-button a {
-	background-color: #3a8bcd;
 	border-radius: 5px;
 	padding: 10px 15px;
 	display: inline-block;
-	color: #fff;
+	color: #0f0f0f;
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -40,7 +39,7 @@ a {
 .section-heading .line-dec {
 	width: 30px;
 	height: 5px;
-	background-color: #3a8bcd;
+	background-color: #cd3a3a;
 }
 .section-heading h1 {
 	font-size: 22px;
@@ -50,7 +49,7 @@ a {
 }
 
 /* Pre Header Style */
-#pre-header {
+/*#pre-header {
 	background-color: #3a8bcd;
 	text-align: center;
 }
@@ -60,7 +59,7 @@ a {
 	padding: 10px 0px;
 	display: inline-block;
 }
-
+*/
 /* Header Style */
 .navbar .navbar-brand {
 	text-align: center;
@@ -109,14 +108,14 @@ a {
 	background-image: none;
 }
 .navbar-dark .navbar-toggler {
-	border-color: #3a8bcd;
-	background-color: #3a8bcd;	
+	border-color: #fc0606;
+	background-color: #0a0a0a;	
 	height: 50px;
 	outline: none;
 }
 .navbar-dark .navbar-toggler-icon:after {
 	content: '\f0c9';
-	color: #FFF;
+	color: #eb0c0c;
 	font-size: 22px;
 	line-height: 30px;
 	font-family: 'FontAwesome';
@@ -131,7 +130,7 @@ a {
 	background-position: center center;
 }
 .banner .caption {
-	background-color: rgba(250,250,250,0.9);
+	background-color: rgba(236, 3, 3, 0.671);
 	padding: 30px;
 	max-width: 450px;
 }
@@ -140,12 +139,12 @@ a {
 	margin-bottom: 15px;
 	font-size: 24px;
 	font-weight: 700;
-	color: #1e1e1e;
+	color: #000000;
 }
 .banner .caption .line-dec {
 	width: 30px;
 	height: 5px;
-	background-color: #3a8bcd;
+	background-color: #000000;
 }
 .banner .caption p {
 	margin-top: 15px;
@@ -155,15 +154,17 @@ a {
 /* Featured Style */
 .featured-items {
 	margin-bottom: 70px;
+	background-color: #1e1e1e6b;
 }
 .featured-item {
 	border-radius: 5px;
-	border: 1px solid #eee;
+	border: 1px solid #000000;
 	padding: 20px;
 	transition: all 0.5s;
 }
 .featured-item:hover {
 	opacity: 0.9;
+	background-color: #fd2a059c;
 }
 .featured-item img {
 	width: 100%;
@@ -171,13 +172,11 @@ a {
 .featured-item h4 {
 	font-size: 17px;
 	font-weight: 700;
-	color: #1e1e1e;
+	color: #000000;
 	margin-top: 15px;
 	transition: all 0.5s;
 }
-.featured-item:hover h4 {
-	color: #3a8bcd;
-}
+
 .featured-item h6 {
 	color: #3a8bcd;
 	font-size: 15px;
@@ -187,6 +186,7 @@ a {
 .owl-theme .owl-dots {
 	text-align: center;
 	margin-top: 30px;
+	background-color: #000000;
 }
 .owl-theme .owl-dots .owl-dot {
 	outline: none;
@@ -207,7 +207,7 @@ a {
 
 /* Subscribe Style */
 .subscribe-form {
-	background-color: #ff4901;
+	background-color: #880606;
 	padding: 80px 0px;
 	text-align: center;
 }
@@ -215,10 +215,10 @@ a {
 	margin-top: 0px;
 }
 .subscribe-form .section-heading h1 {
-	color: #fff;
+	color: #000000;
 }
 .subscribe-form .section-heading .line-dec {
-	background-color: #fff;
+	background-color: #f8f5f5;
 	margin: 0 auto;
 }
 .subscribe-form .main-content p {
@@ -227,7 +227,7 @@ a {
 	margin-bottom: 30px;
 }
 .subscribe-form .main-content form  {
-	color: #fff;
+	color: #000000;
 	display: inline;
 }
 .subscribe-form .main-content form input {
@@ -236,25 +236,25 @@ a {
 .subscribe-form .main-content form input {
 	width: 100%;
 	height: 46px;
-	border: 1px solid #fff;
+	border: 1px solid #ffffff;
 	background-color: transparent;
 	padding-left: 15px;
 	color: #fff;
 	outline: none;
 }
 .subscribe-form .main-content form button:focus {
-	color: #fff!important;
+	color: #ffffff!important;
 }
 .subscribe-form .main-content form button {
 	width: 100%;
 	height: 45px;
 	cursor: pointer;
-	background-color: #fff;
+	background-color: #070707;
 	outline: none;
 	border-radius: 5px;
 	padding: 10px 15px;
 	display: inline-block;
-	color: #3a8bcd;
+	color: #83bae7;
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -308,8 +308,8 @@ a {
 .footer .social-icons a {
 	width: 32px;
 	height: 32px;
-	color: #fff;
-	background-color: #aaa;
+	color: #ffffff;
+	background-color: #000000;
 	text-align: center;
 	display: inline-block;
 	line-height: 33px;
@@ -318,7 +318,7 @@ a {
 	transition: all 0.5s;
 }
 .footer .social-icons a:hover {
-	background-color: #3a8bcd;
+	background-color: #990d0d;
 }
 
 /* Sub Footer Style */
@@ -328,7 +328,7 @@ a {
 }
 .sub-footer p {
 	font-size: 12px;
-	color: #7a7a7a;
+	color: #000000;
 	line-height: 60px;
 }
 .sub-footer a {
@@ -345,10 +345,10 @@ a {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
-.featured-page #filters {
+/*.featured-page #filters {
 	margin-top: 15px;
 	text-align: right;
-}
+}*/
 .featured .featured-item {
 	margin-bottom: 30px;
 	text-decoration: none;
@@ -356,13 +356,13 @@ a {
 .featured .featured-item h4 {
 	transition: all 0.5s;
 }
-.featured .featured-item:hover h4 {
+/*.featured .featured-item:hover h4 {
 	color: #3a8bcd;
-}
+}*/
 #filter button {
 	outline: none;
 }
-#filter .btn-primary.focus,
+/*#filter .btn-primary.focus,
 .btn-primary:focus {
 	color: #3a8bcd!important;
 	box-shadow: none!important;
@@ -373,7 +373,7 @@ a {
 	font-size: 15px;
 	font-weight: 700;
 	background-color: transparent;
-}
+}*/
 /* Isotope Transitions
 ------------------------------- */
 .isotope,
@@ -424,12 +424,12 @@ a {
 	text-decoration: none;
 	transition: all 0.5s;
 }
-.page-navigation ul li a:hover,
+/*.page-navigation ul li a:hover,
 .page-navigation ul li.current-page a {
 	background-color: #3a8bcd;
 	border-color: #3a8bcd;
 	color: #fff;
-}
+}*/
 
 
 
@@ -554,7 +554,7 @@ a {
 
 
 /* About Us Style */
-.about-page {
+/*.about-page {
 	margin-top: 50px;
     margin-bottom: 80px;
 }
@@ -597,12 +597,12 @@ a {
 .about-page .right-content span a:hover i {
 	background-color: #3a8bcd;
 }
-
+*/
 
 
 
 /* Contact Page Style */
-.contact-page {
+/*.contact-page {
 	margin-top: 50px;
     margin-bottom: 80px;
 }
@@ -668,7 +668,22 @@ a {
 	transition: all 0.5s;
 	box-shadow: none;
 	border: none;
+}*/
+.modal-header{
+	background-color: gray;
 }
+.form-control{
+	background-color: gray;
+	border: 1px solid black;
+}
+.form-label{
+	font-weight: 700;
+}
+img{
+	width: 130px;
+}
+
+
 
 /* Responsive Style */
 @media (max-width: 991px) {
@@ -748,7 +763,7 @@ a {
 }
 
 .invalid {
-	border-color: #F00;
+	border-color: rgb(255, 230, 0);
 }
 
 .text-muted {

@@ -27,24 +27,24 @@ function tarefasCSS(cb) {
 function tarefasJS(){
 
     return gulp.src([
-            './node_modules/jquery/dist/jquery.js',
+            './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
             './node_modules/bootstrap/dist/js/bootstrap.js',
             './vendor/owl/js/owl.js',
             './vendor/jquery-mask/jquery.mask.js',
             './vendor/jquery-ui/jquery-ui.js',
-            './src/js/custom.js'
+            './src/css/style.css'
         ])
         .pipe(stripJs())                    // remove comentários
-        .pipe(concat('scripts.js'))         // mescla arquivos
+        .pipe(concat('styles.css'))         // mescla arquivos
         .pipe(uglify())                     // minifica js
         .pipe(rename({ suffix: '.min'}))    // scripts.min.js
-        .pipe(gulp.dest('./dist/js'))       // cria arquivo em novo diretório
+        .pipe(gulp.dest('./dist/css'))       // cria arquivo em novo diretório
 }
 
 
 function tarefasImagem(){
     
-    return gulp.src('./src/images/*')
+    return gulp.src('.src/images/*')
         .pipe(image({
             pngquant: true,
             optipng: false,
@@ -56,7 +56,7 @@ function tarefasImagem(){
             concurrent: 10,
             quiet: true
         }))
-        .pipe(gulp.dest('./dist/images'))
+        .pipe(gulp.dest('.dist/images'))
 }
 
 exports.styles = tarefasCSS
