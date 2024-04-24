@@ -6,11 +6,12 @@ const uglify = require('gulp-uglify')
 const image = require('gulp-imagemin')
 const stripJs = require('gulp-strip-comments')
 const stripCss = require('gulp-strip-css-comments')
-const htmlmin= require('gulp-htmlmin')
-const {series, parallel}= require('gulp')
-const babel= require('gulp-babel')
-const browserSync= require('browser-sync').create()
-const reload= browserSync.reload
+const htmlmin = require('gulp-htmlmin')
+const { series, parallel } = require('gulp')
+const babel = require('gulp-babel')
+const browserSync = require('browser-sync').create()
+const reload = browserSync.reload
+const sass = require('gulp-sass')(require('node-sass'))
 
 
 function tarefasCSS(callback) {
@@ -19,26 +20,33 @@ function tarefasCSS(callback) {
         './node_modules/bootstrap/dist/css/bootstrap.css',
         './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
         './vendor/owl/css/owl.css',
-        './vendor/jquery-ui/jquery-ui.css',
-        './src/css/style.css'
+        './vendor/jquery-ui/jquery-ui.css'
+        
     ])
         .pipe(babel({
             comments: false,
             presets: ['@babel/env']
-        }))                   
+        }))
 
-        .pipe(concat('styles.css'))         // mescla arquivos
+        .pipe(concat('libs.css'))         // mescla arquivos
         .pipe(cssmin())                     // minifica css
-        .pipe(rename({ suffix: '.min' }))    // styles.min.css
+        .pipe(rename({ suffix: '.min' }))    // libs.min.css
         .pipe(gulp.dest('./dist/css'))      // cria arquivo em novo diretório
 
     return callback()
 }
 
+function tarefasSASS(cb) {
+    gulp.src('./src/scss/**/*.scss')
+        .pipe(sass()) //sass para css
+        .pipe(gulp.dest('./dist/css'))
+
+    cb()
+}
+
 function tarefasJS(callback) {
 
     gulp.src([
-        './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
         './node_modules/bootstrap/dist/js/bootstrap.js',
         './vendor/owl/js/owl.js',
         './vendor/jquery-mask/jquery.mask.js',
@@ -46,11 +54,11 @@ function tarefasJS(callback) {
         './src/js/custom.js'
     ])
         .pipe(stripJs())                    // remove comentários
-        .pipe(concat('styles.css'))         // mescla arquivos
+        .pipe(concat('libs.js'))         // mescla arquivos
         .pipe(uglify())                     // minifica js
         .pipe(rename({ suffix: '.min' }))    // scripts.min.js
-        .pipe(gulp.dest('./dist/css')) // cria arquivo em novo diretório
-    return callback()               
+        .pipe(gulp.dest('./dist/js')) // cria arquivo em novo diretório
+    return callback()
 }
 
 function tarefasImagem() {
@@ -77,7 +85,7 @@ function tarefasHTML(callback) {
     return callback()
 }
 
-gulp.task('serve', function(){
+gulp.task('serve', function () {
 
     browserSync.init({
         server: {
@@ -86,13 +94,16 @@ gulp.task('serve', function(){
     })
 
     gulp.watch('./dist/**/*').on('change', reload)
-    gulp.watch('./src/**/*').on('change',process) // repete quando alterar src
+    gulp.watch('./src/**/*').on('change', process) // repete quando alterar src
 })
 
 
-const process= series(tarefasHTML, tarefasJS, tarefasCSS)
+const process = series(tarefasHTML, tarefasJS, tarefasCSS, tarefasSASS)
 
 exports.styles = tarefasCSS
 exports.scripts = tarefasJS
 exports.images = tarefasImagem
+exports.sass= tarefasSASS
+
+
 exports.default = process
