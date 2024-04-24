@@ -10,7 +10,7 @@ $(document).ready(function(){
    
    let destaques = $('#featured') // id
    
-   // console.log(titulos.first());
+   // console.log(titulos.first()); 
    
    // Configuração de produtos
    
