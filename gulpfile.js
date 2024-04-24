@@ -86,7 +86,7 @@ gulp.task('serve', function(){
     })
 
     gulp.watch('./dist/**/*').on('change', reload)
-    gulp.watch('./src/**/*').on('change',process) // repete quando alterar src
+    gulp.watch('./src/**/*').on('change',process) // repete quando for alterar src
 })
 
 
