@@ -50,7 +50,7 @@ function tarefasJS(callback) {
         './node_modules/bootstrap/dist/js/bootstrap.js',
         './vendor/owl/js/owl.js',
         './vendor/jquery-mask/jquery.mask.js',
-        //'./vendor/jquery-ui/jquery-ui.js',
+        './vendor/jquery-ui/jquery-ui.js',
         './src/js/custom.js'
     ])
         .pipe(stripJs())                    // remove comentários
@@ -63,7 +63,7 @@ function tarefasJS(callback) {
 
 function tarefasImagem() {
 
-    return gulp.src('.src/images/*')
+    return gulp.src('.src/images/*.jpg', '.src/images/*.png')
         .pipe(image({
             pngquant: true,
             optipng: false,
