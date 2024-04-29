@@ -38,24 +38,23 @@ function tarefasCSS(callback) {
 function tarefasJS(callback) {
 
     gulp.src([
-        './node_modules/@fortawesome/fontawesome-free/css/fontawesome.css',
         './node_modules/bootstrap/dist/js/bootstrap.js',
         './vendor/owl/js/owl.js',
         './vendor/jquery-mask/jquery.mask.js',
-        //'./vendor/jquery-ui/jquery-ui.js',
+        './vendor/jquery-ui/jquery-ui.js',
         './src/js/custom.js'
     ])
         .pipe(stripJs())                    // remove comentários
-        .pipe(concat('styles.css'))         // mescla arquivos
+        .pipe(concat('libs.js'))         // mescla arquivos
         .pipe(uglify())                     // minifica js
         .pipe(rename({ suffix: '.min' }))    // scripts.min.js
-        .pipe(gulp.dest('./dist/css')) // cria arquivo em novo diretório
+        .pipe(gulp.dest('./dist/js')) // cria arquivo em novo diretório
     return callback()               
 }
 
 function tarefasImagem() {
 
-    return gulp.src('.src/images/*')
+    return gulp.src('.src/images/*.jpg', '.src/images/*.png')
         .pipe(image({
             pngquant: true,
             optipng: false,
